@@ -1,0 +1,204 @@
+E. coli 
+
+Acceptable E. coli levels vary depending on the application:
+- Drinking water: 0 CFU/100 mL (EPA guideline)
+- Recreational water: 235 CFU/100 mL (EPA guideline)
+- Wastewater treatment: 10,000 CFU/100 mL (typical discharge limit)
+
+- Low risk: 1-10 CFU/100 mL (background levels)
+- Medium risk: 11-100 CFU/100 mL (increased contamination)
+- High risk: 101-1,000 CFU/100 mL (significant contamination)
+- Critical risk: >1,000 CFU/100 mL (imminent health risk)
+
+
+
+
+
+
+
+
+Coliform
+
+Acceptable Coliform levels vary depending on the application:
+- Drinking water: 0 CFU/100 mL (EPA guideline)
+- Recreational water: 200 CFU/100 mL (EPA guideline)
+- Wastewater treatment: 1,000 CFU/100 mL (typical discharge limit)
+- Surface water: 400 CFU/100 mL (USGS guideline)
+
+incase of:
+- Low risk: 1-10 CFU/100 mL (background levels)
+- Medium risk: 11-100 CFU/100 mL (increased contamination)
+- High risk: 101-1,000 CFU/100 mL (significant contamination)
+- Critical risk: >1,000 CFU/100 mL (imminent health risk)
+
+
+
+
+
+
+
+
+Salmonella
+
+Acceptable Salmonella levels:
+- Drinking water: 0 CFU/100 mL (zero tolerance)
+- Food products: 0 CFU/25g (zero tolerance)
+- Environmental samples: 0 CFU/100 mL (zero tolerance)
+
+- Low risk: 0 CFU/100 mL (zero detection)
+- Medium risk: 1-10 CFU/100 mL (low-level contamination)
+- High risk: 11-100 CFU/100 mL (moderate contamination)
+- Critical risk: >100 CFU/100 mL (high-level contamination)
+
+
+
+
+
+
+Campylobacter
+
+Acceptable Campylobacter levels:
+- Drinking water: 0 CFU/100 mL (zero tolerance)
+- Food products: 0 CFU/25g (zero tolerance)
+- Environmental samples: 0 CFU/100 mL (zero tolerance)
+
+- WHO: 0 CFU/100 mL (zero tolerance)
+- EPA: No specific guidelines (regulated under Coliform standards)
+- USDA: 0 CFU/25g (zero tolerance) for poultry products
+- EU: 100 CFU/g (maximum limit) for poultry meat
+
+- Low risk: 0 CFU/100 mL (zero detection)
+- Medium risk: 1-10 CFU/100 mL (low-level contamination)
+- High risk: 11-100 CFU/100 mL (moderate contamination)
+- Critical risk: >100 CFU/100 mL (high-level contamination)
+
+
+
+
+
+
+Lead (Pb)
+
+Acceptable Lead levels:
+- Drinking water: 0.01 mg/L (0.01 ppm)
+- Soil: 400 mg/kg (EPA residential soil guideline)
+- Air: 0.15 μg/m³ (EPA ambient air guideline)
+
+- Low risk: 0-0.01 mg/L (0-0.01 ppm)
+- Medium risk: 0.011-0.05 mg/L (0.011-0.05 ppm)
+- High risk: 0.051-0.1 mg/L (0.051-0.1 ppm)
+- Critical risk: >0.1 mg/L (0.1 ppm)
+
+
+
+
+
+Arsenic (As)
+
+Acceptable Arsenic levels:
+- Drinking water: 0.01 mg/L (0.01 ppm)
+- Soil: 20 mg/kg (EPA residential soil guideline)
+- Air: 0.0023 μg/m³ (EPA ambient air guideline)
+
+- Low risk: 0-0.01 mg/L (0-0.01 ppm)
+- Medium risk: 0.011-0.05 mg/L (0.011-0.05 ppm)
+- High risk: 0.051-0.1 mg/L (0.051-0.1 ppm)
+- Critical risk: >0.1 mg/L (0.1 ppm)
+
+
+
+
+
+Mercury (Hg)
+
+
+Acceptable Mercury levels:
+- Drinking water: 0.001 mg/L (0.001 ppm)
+- Soil: 1 mg/kg (EPA residential soil guideline)
+- Air: 0.03 μg/m³ (EPA ambient air guideline)
+
+- Low risk: 0-0.001 mg/L (0-0.001 ppm)
+- Medium risk: 0.0011-0.005 mg/L (0.0011-0.005 ppm)
+- High risk: 0.0051-0.01 mg/L (0.0051-0.01 ppm)
+- Critical risk: >0.01 mg/L (0.01 ppm)
+
+
+
+
+
+Cadmium (Cd)
+
+Acceptable Cadmium levels:
+- Drinking water: 0.003 mg/L (0.003 ppm)
+- Soil: 10 mg/kg (EPA residential soil guideline)
+- Air: 0.005 μg/m³ (EPA ambient air guideline)
+
+- Low risk: 0-0.003 mg/L (0-0.003 ppm)
+- Medium risk: 0.0031-0.01 mg/L (0.0031-0.01 ppm)
+- High risk: 0.011-0.05 mg/L (0.011-0.05 ppm)
+- Critical risk: >0.05 mg/L (0.05 ppm)
+
+
+
+
+
+Chromium (Cr)
+
+Acceptable Chromium levels:
+- Drinking water: 0.05 mg/L (0.05 ppm)
+- Soil: 100 mg/kg (EPA residential soil guideline)
+- Air: 0.001 μg/m³ (EPA ambient air guideline)
+
+Low risk: 0-0.05 mg/L (0-0.05 ppm)
+- Medium risk: 0.051-0.1 mg/L (0.051-0.1 ppm)
+- High risk: 0.11-0.5 mg/L (0.11-0.5 ppm)
+- Critical risk: >0.5 mg/L (0.5 ppm)
+
+
+
+
+
+Nitrates (NO3-)
+
+Acceptable Nitrate levels:
+- Drinking water: 50 mg/L (50 ppm)
+- Surface water: 20 mg/L (20 ppm)
+- Groundwater: 10 mg/L (10 ppm)
+
+- Low risk: 0-20 mg/L (0-20 ppm)
+- Medium risk: 21-50 mg/L (21-50 ppm)
+- High risk: 51-100 mg/L (51-100 ppm)
+- Critical risk: >100 mg/L (100 ppm)
+
+
+
+
+
+2. Fluoride (F-)
+
+Acceptable Fluoride levels:
+- Drinking water: 1.5 mg/L (1.5 ppm)
+- Surface water: 1.0 mg/L (1.0 ppm)
+- Groundwater: 0.5 mg/L (0.5 ppm)
+
+- Low risk: 0-1.0 mg/L (0-1.0 ppm)
+- Medium risk: 1.1-2.0 mg/L (1.1-2.0 ppm)
+- High risk: 2.1-4.0 mg/L (2.1-4.0 ppm)
+- Critical risk: >4.0 mg/L (4.0 ppm)
+
+
+
+
+
+
+Chlorine (Cl2)
+
+Acceptable Chlorine levels:
+- Drinking water: 5 mg/L (5 ppm)
+- Surface water: 2 mg/L (2 ppm)
+- Swimming pools: 1-3 mg/L (1-3 ppm)
+
+- Low risk: 0-2 mg/L (0-2 ppm)
+- Medium risk: 2.1-5 mg/L (2.1-5 ppm)
+- High risk: 5.1-10 mg/L (5.1-10 ppm)
+- Critical risk: >10 mg/L (10 ppm)
