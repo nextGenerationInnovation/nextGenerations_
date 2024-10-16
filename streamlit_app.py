@@ -33,13 +33,14 @@ for contaminant in contaminants:
 # Placeholders for real-time data and plot
 data_placeholder = st.empty()
 plot_placeholder = st.empty()
+alert_placeholder = st.empty()
 
 # Function to update data and plot
 def update_data_and_plot():
     global data
     new_data = get_real_time_data()
-    for contaminant, level in slider_values.items():
-        new_data.loc[new_data['Contaminant'] == contaminant, 'Level'] = level
+    for contaminant in contaminants:
+        new_data.loc[new_data['Contaminant'] == contaminant, 'Level'] = np.random.uniform(0, 100)
     data = pd.concat([data, new_data]).tail(100)  # Keep the last 100 entries
 
     # Update real-time data display
@@ -48,8 +49,9 @@ def update_data_and_plot():
     # Risk Assessment and Alerts
     data['Risk_Level'] = data.apply(categorize_risk, axis=1)
     alerts = generate_alert(data)
+    alert_placeholder.empty()  # Clear previous alerts
     for alert in alerts:
-        st.warning(alert)
+        alert_placeholder.warning(alert)
 
     # Update plot
     fig = px.line(data, x='Time', y='Level', color='Contaminant', title="Contaminant Levels Over Time",
@@ -61,4 +63,3 @@ def update_data_and_plot():
 while True:
     update_data_and_plot()
     time.sleep(refresh_rate)
-
