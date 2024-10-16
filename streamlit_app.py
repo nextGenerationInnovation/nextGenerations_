@@ -1,9 +1,9 @@
 ﻿import streamlit as st
 import pandas as pd
 import numpy as np
-from datetime import datetime
+from datetime import datetime, timedelta
 from model.risk_assessment import categorize_risk
-from utils.data_processing import get_real_time_data
+from utils.data_processing import get_real_time_data, save_data_to_log
 from utils.notifications import generate_alert
 import time
 import plotly.express as px
@@ -30,6 +30,26 @@ for contaminant in contaminants:
         f"{contaminant} Level", 0.0, 100.0, float(data[data['Contaminant'] == contaminant]['Level'].iloc[-1])
     )
 
+# Dropdown to select contaminant
+selected_contaminant = st.selectbox("Select Contaminant", contaminants)
+
+# Dropdown to select timeframe
+timeframes = {
+    "1 minute": timedelta(minutes=1),
+    "5 minutes": timedelta(minutes=5),
+    "15 minutes": timedelta(minutes=15),
+    "30 minutes": timedelta(minutes=30),
+    "1 hour": timedelta(hours=1),
+    "2 hours": timedelta(hours=2),
+    "4 hours": timedelta(hours=4),
+    "6 hours": timedelta(hours=6),
+    "1 day": timedelta(days=1),
+    "1 month": timedelta(days=30),
+    "1/2 year": timedelta(days=182),
+    "1 year": timedelta(days=365)
+}
+selected_timeframe = st.selectbox("Select Timeframe", list(timeframes.keys()))
+
 # Placeholders for real-time data and plot
 data_placeholder = st.empty()
 plot_placeholder = st.empty()
@@ -43,18 +63,26 @@ def update_data_and_plot():
         new_data.loc[new_data['Contaminant'] == contaminant, 'Level'] = np.random.uniform(0, 100)
     data = pd.concat([data, new_data]).tail(100)  # Keep the last 100 entries
 
+    # Save data to log file
+    save_data_to_log(data)
+
+    # Filter data based on selected contaminant and timeframe
+    end_time = datetime.now()
+    start_time = end_time - timeframes[selected_timeframe]
+    filtered_data = data[(data['Contaminant'] == selected_contaminant) & (data['Time'] >= start_time)]
+
     # Update real-time data display
-    data_placeholder.dataframe(data)
+    data_placeholder.dataframe(filtered_data)
 
     # Risk Assessment and Alerts
-    data['Risk_Level'] = data.apply(categorize_risk, axis=1)
-    alerts = generate_alert(data)
+    filtered_data['Risk_Level'] = filtered_data.apply(categorize_risk, axis=1)
+    alerts = generate_alert(filtered_data)
     alert_placeholder.empty()  # Clear previous alerts
     for alert in alerts:
         alert_placeholder.warning(alert)
 
     # Update plot
-    fig = px.line(data, x='Time', y='Level', color='Contaminant', title="Contaminant Levels Over Time",
+    fig = px.line(filtered_data, x='Time', y='Level', title=f"{selected_contaminant} Levels Over Time",
                   labels={'Time': 'Time', 'Level': 'Level'}, template='plotly_dark')
     fig.update_traces(mode='lines+markers')
     plot_placeholder.plotly_chart(fig, use_container_width=True)
@@ -63,3 +91,4 @@ def update_data_and_plot():
 while True:
     update_data_and_plot()
     time.sleep(refresh_rate)
+
