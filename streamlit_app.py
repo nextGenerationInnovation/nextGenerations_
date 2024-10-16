@@ -1,4 +1,4 @@
-import streamlit as st
+﻿import streamlit as st
 import pandas as pd
 import numpy as np
 from model.risk_assessment import categorize_risk
@@ -9,7 +9,7 @@ from utils.notifications import generate_alert
 # Main UI design
 st.set_page_config(page_title="Water Quality Monitoring System", layout="wide")
 
-st.title("?? Water Quality Monitoring System")
+st.title("💧 Water Quality Monitoring System")
 st.subheader("Real-time Monitoring and Risk Assessment")
 
 # Sidebar for user input
