@@ -3,10 +3,11 @@ import pandas as pd
 import numpy as np
 from datetime import datetime, timedelta
 from model.risk_assessment import categorize_risk
-from utils.data_processing import get_real_time_data, save_data_to_log
+from utils.data_processing import get_real_time_data, save_data_to_log, load_data_from_log
 from utils.notifications import generate_alert
 import time
 import plotly.express as px
+import os
 
 # Main UI design
 st.set_page_config(page_title="Water Quality Monitoring System", layout="wide")
@@ -35,6 +36,7 @@ selected_contaminant = st.selectbox("Select Contaminant", contaminants)
 
 # Dropdown to select timeframe
 timeframes = {
+    "5 seconds": timedelta(seconds=5),
     "1 minute": timedelta(minutes=1),
     "5 minutes": timedelta(minutes=5),
     "15 minutes": timedelta(minutes=15),
@@ -66,10 +68,8 @@ def update_data_and_plot():
     # Save data to log file
     save_data_to_log(data)
 
-    # Filter data based on selected contaminant and timeframe
-    end_time = datetime.now()
-    start_time = end_time - timeframes[selected_timeframe]
-    filtered_data = data[(data['Contaminant'] == selected_contaminant) & (data['Time'] >= start_time)].copy()
+    # Load data from log file based on selected contaminant and timeframe
+    filtered_data = load_data_from_log(selected_contaminant, selected_timeframe)
 
     # Update real-time data display
     data_placeholder.dataframe(filtered_data)
@@ -91,3 +91,4 @@ def update_data_and_plot():
 while True:
     update_data_and_plot()
     time.sleep(refresh_rate)
+
