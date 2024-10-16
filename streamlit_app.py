@@ -69,13 +69,13 @@ def update_data_and_plot():
     # Filter data based on selected contaminant and timeframe
     end_time = datetime.now()
     start_time = end_time - timeframes[selected_timeframe]
-    filtered_data = data[(data['Contaminant'] == selected_contaminant) & (data['Time'] >= start_time)]
+    filtered_data = data[(data['Contaminant'] == selected_contaminant) & (data['Time'] >= start_time)].copy()
 
     # Update real-time data display
     data_placeholder.dataframe(filtered_data)
 
     # Risk Assessment and Alerts
-    filtered_data['Risk_Level'] = filtered_data.apply(categorize_risk, axis=1)
+    filtered_data.loc[:, 'Risk_Level'] = filtered_data.apply(categorize_risk, axis=1)
     alerts = generate_alert(filtered_data)
     alert_placeholder.empty()  # Clear previous alerts
     for alert in alerts:
@@ -91,4 +91,3 @@ def update_data_and_plot():
 while True:
     update_data_and_plot()
     time.sleep(refresh_rate)
-

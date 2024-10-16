@@ -12,3 +12,7 @@ def get_real_time_data():
         'Time': [datetime.now() for _ in contaminants]  # Add a timestamp for each contaminant
     }
     return pd.DataFrame(data)
+
+def save_data_to_log(data):
+    # Save data to a CSV log file
+    data.to_csv('contaminant_log.csv', mode='a', header=False, index=False)
