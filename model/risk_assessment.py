@@ -12,3 +12,5 @@ def categorize_risk(row):
         return "High"
     else:
         return "Critical"
+
+

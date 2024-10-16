@@ -8,3 +8,5 @@
         elif row['Risk_Level'] == "Critical":
             alerts.append(f"🚨 {row['Contaminant']} levels are critical! Emergency response required.")
     return alerts
+
+
