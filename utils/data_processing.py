@@ -22,7 +22,25 @@ def save_data_to_log(data):
         file_path = f'{folder_path}/5_seconds.csv'
         data[data['Contaminant'] == contaminant].to_csv(file_path, mode='a', header=not os.path.exists(file_path), index=False)
 
-def load_data_from_log(contaminant, timeframe):
+def load_data_from_log(contaminant, timeframe_str):
+    # Convert timeframe string to timedelta
+    timeframes = {
+        "5 seconds": timedelta(seconds=5),
+        "1 minute": timedelta(minutes=1),
+        "5 minutes": timedelta(minutes=5),
+        "15 minutes": timedelta(minutes=15),
+        "30 minutes": timedelta(minutes=30),
+        "1 hour": timedelta(hours=1),
+        "2 hours": timedelta(hours=2),
+        "4 hours": timedelta(hours=4),
+        "6 hours": timedelta(hours=6),
+        "1 day": timedelta(days=1),
+        "1 month": timedelta(days=30),
+        "1/2 year": timedelta(days=182),
+        "1 year": timedelta(days=365)
+    }
+    timeframe = timeframes[timeframe_str]
+
     folder_path = f'logs/{contaminant}'
     file_path = f'{folder_path}/5_seconds.csv'
     if not os.path.exists(file_path):
@@ -50,8 +68,7 @@ def load_data_from_log(contaminant, timeframe):
             "1 month": '1M',
             "1/2 year": '6M',
             "1 year": '1Y'
-        }[str(timeframe)]
+        }[timeframe_str]
         filtered_data = filtered_data.set_index('Time').resample(resample_rule).mean().reset_index()
 
     return filtered_data
-
