@@ -13,3 +13,4 @@ def plot_risk_levels(data):
     fig, ax = plt.subplots(figsize=(10, 5))
     sns.barplot(x='Contaminant', y='Level', hue='Risk_Level', data=data, ax=ax)
     st.pyplot(fig)
+

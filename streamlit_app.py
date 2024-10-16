@@ -40,3 +40,4 @@ plot_risk_levels(data)
 
 st.sidebar.write("Data last updated: ", pd.Timestamp.now())
 st.sidebar.write("Note: Thresholds are based on EPA and WHO guidelines.")
+
