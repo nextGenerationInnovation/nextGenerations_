@@ -12,4 +12,3 @@ def get_real_time_data():
         'Time': [datetime.now() for _ in contaminants]  # Add a timestamp for each contaminant
     }
     return pd.DataFrame(data)
-
